@@ -38,7 +38,7 @@ The system is engineered into distinct functional layers to ensure scalability f
 ---
 
 ## 📂 Project Structure
-''' text
+'''text
 decentralized-communication-protocol/
 
 ├── backend/                        # Golang P2P Core Engine
