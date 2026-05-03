@@ -1,6 +1,6 @@
 # Decentralized Communication Protocol (DCP)
 
-![Project Status](https://img.shields.io/badge/Status-Active--Development-green)
+![Project Status](https://img.shields.io/badge/Status-In--Planning-yellow)
 ![Platform](https://img.shields.io/badge/Platform-Local--Network-blue)
 ![Security](https://img.shields.io/badge/Security-E2EE-red)
 ![Backend](https://img.shields.io/badge/Backend-Go-00ADD8?logo=go)
