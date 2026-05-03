@@ -38,7 +38,7 @@ The system is engineered into distinct functional layers to ensure scalability f
 ---
 
 ## 📂 Project Structure
-
+''' text
 decentralized-communication-protocol/
 
 ├── backend/                        # Golang P2P Core Engine
@@ -87,6 +87,7 @@ decentralized-communication-protocol/
 ├── .gitignore                      # استثناء ملفات node_modules و Binaries
 └── README.md                       # الوثيقة الرئيسية للمشروع
 
+'''
 ---
 
 ## 🚀 Execution Workflow
