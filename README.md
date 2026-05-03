@@ -1,36 +1,82 @@
-# decentralized-communication-protocol
-General Objective: An integrated decentralized communication protocol that operates within local networks, enabling high-quality media sharing and calls without requiring an internet connection or a central server.
+# P2P-Protocol-Suite: Decentralized-Communication-protocol
+
+![Project Status](https://img.shields.io/badge/Status-In--Planning-yellow)
+![Platform](https://img.shields.io/badge/Platform-Local--Network-blue)
+![Security](https://img.shields.io/badge/Security-E2EE-red)
+![Language](https://img.shields.io/badge/Language-Go-00ADD8?logo=go)
+
+## 📌 Overview
+**P2P-Protocol-Suite** is a robust, decentralized communication framework designed for high-performance interaction within Local Area Networks (LAN). Built with **Go**, it eliminates the need for central servers or internet connectivity, providing a private and resilient ecosystem for real-time messaging, media streaming, and data synchronization.
+
+The protocol is engineered with a **Modular Layered Architecture**, ensuring high scalability and making it future-ready for global network (WAN) integration.
 
 ---
 
-1. Networking Stack
+## 🏗️ Technical Architecture
 
-· Communication Model: Pure Peer-to-Peer (P2P); every user is a "node" that acts as both a server and a client simultaneously.
-· User Discovery: Uses mDNS (ZeroConf) protocol, allowing devices to find each other immediately upon connecting to the same Wi-Fi network without any manual setup.
-· Transport Protocol:
-  · TCP: For text messages and files to ensure complete, in-order delivery.
-  · UDP (WebRTC): For voice and video calls to ensure minimal latency.
+The system is built on a clean, decoupled architecture to ensure stability and ease of development:
 
-2. Core Features
+*   **Identity Layer (`/peer`):** Uses Ed25519 public-key signatures to generate unique PeerIDs, ensuring identity persistence without relying on IP addresses.
+*   **Discovery Layer (`/discovery`):** Implements **mDNS (ZeroConf)** for zero-configuration peer discovery within the local subnet.
+*   **Transport Layer (`/transport`):** A multi-protocol engine supporting **TCP, UDP, and QUIC** for optimized data delivery based on traffic type.
+*   **Security Layer (`/session`):** Provides End-to-End Encryption (E2EE) using the **Double Ratchet Algorithm** and **X3DH** for forward secrecy.
+*   **Media Engine (`/media`):** Orchestrates **WebRTC** streams for real-time screen sharing, HD video conferencing, and low-latency audio.
+*   **Sync Layer (`/sync`):** Leverages **Gossip Protocols** for efficient state synchronization and decentralized message propagation across all nodes.
 
-· Chats:
-  · 1-on-1 private messaging.
-  · Decentralized group chats based on data synchronization between active members.
-· Media Sharing: Send and receive images, videos, and large files at lightning speed (limited only by your router's speed).
-· Calls: HD-quality voice and video calls over the local network.
-· Heartbeating: Checks the status of connected users every second to maintain an accurate, real-time "currently online" list.
-· Voice Messages: Send voice recordings with a waveform visualizer feature.
+---
 
-3. Security Layer
+## 🚀 Key Capabilities
 
-· End-to-End Encryption (E2EE): Uses X3DH and Double Ratchet algorithms (same as Signal) for absolute privacy.
-· Key Exchange: Uses elliptic-curve cryptography for key exchange between devices upon discovery.
-· Encrypted Local Storage: Local database on each device is encrypted, preventing message access even if the device is physically accessed without the app.
-· Digital Signatures: Every message is digitally signed to prevent impersonation within the network.
+| Feature | Technical Implementation |
+| :--- | :--- |
+| **Real-time Streaming** | Multi-party WebRTC orchestration with dynamic coordinator election. |
+| **Decentralized Groups** | Topic-based messaging using GossipSub for seamless data sync. |
+| **Secure Handshake** | Elliptic-Curve Diffie-Hellman (ECDH) for safe key exchange over LAN. |
+| **High-Speed Transfer** | Parallel TCP streams for lightning-fast file and media sharing. |
+| **Privacy First** | Metadata-protected headers and encrypted local storage for every node. |
 
-4. User Experience (UX) & Professionalism
+---
 
-· Smart Sync: When a new device joins a group, the "oldest" available member automatically provides it with the last 100 messages.
-· Typing & Read Indicators: Real-time typing indicators and read receipts.
-· User Interface: Modern design with Dark Mode support and a drag-and-drop interface for file sending.
-· Background Operation: The app continues to run and receive notifications even when the main interface is closed.
+## 📂 Project Structure (Planned)
+
+Designed to be "Internet-Ready," the framework uses abstraction interfaces that allow expanding from LAN to WAN without breaking the core logic:
+```text
+├── cmd/
+│   └── node/        # Main entry point for the P2P node
+├── internal/
+│   ├── peer/        # Identity & Routing management
+│   ├── transport/   # Network I/O (TCP/UDP/QUIC)
+│   ├── discovery/   # mDNS (Local) / DHT (Planned for WAN)
+│   ├── session/     # E2EE (X3DH + Double Ratchet)
+│   ├── media/       # WebRTC & Media Processing
+│   └── sync/        # Data Synchronization (Gossip Protocol)
+├── api/             # Protocol Definitions (Protobuf/JSON)
+├── pkg/             # Helper utilities (Crypto, Logging)
+└── docs/            # Technical diagrams & Specifications
+
+📈 Development Roadmap
+
+    [ ] Phase 1: Core Repository Architecture & Identity Generation.
+
+    [ ] Phase 2: mDNS Peer Discovery & Secure Handshake implementation.
+
+    [ ] Phase 3: P2P Encrypted Text Messaging & Gossip Sync (Pub/Sub).
+
+    [ ] Phase 4: Real-time Audio/Video Streaming & Screen Sharing.
+
+    [ ] Phase 5: Optimization for High-Density Local Networks.
+
+🛡️ Security Principles
+
+This project adheres to strict cryptographic standards:
+
+    Perfect Forward Secrecy (PFS): Keys are rotated per message to ensure old data remains secure.
+
+    Zero-Trust Architecture: No node is trusted by default; all data is verified via digital signatures.
+
+    Complete Decentralization: No "Super-Node" or central authority exists at the protocol level.
+
+🤝 Contribution & License
+
+This project is for academic and professional development.
+Licensed under the MIT License.
