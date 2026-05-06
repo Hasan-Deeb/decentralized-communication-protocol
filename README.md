@@ -1,6 +1,6 @@
 # Decentralized Communication Protocol (DCP)
 
-![Project Status](https://img.shields.io/badge/Status-In--Planning-yellow)
+![Project Status](https://img.shields.io/badge/Status-In--Progress-green)
 ![Platform](https://img.shields.io/badge/Platform-Local--Network-blue)
 ![Security](https://img.shields.io/badge/Security-E2EE-red)
 ![Backend](https://img.shields.io/badge/Backend-Go-00ADD8?logo=go)
@@ -112,15 +112,15 @@ decentralized-communication-protocol/
 ---
 📈 Development Roadmap
 
-    [ ] Phase 1: Core Repository Architecture & Identity Generation.
+    [✔️] Phase 1: Core Repository Architecture & Identity Generation.
 
-    [ ] Phase 2: mDNS Peer Discovery & Secure Handshake implementation.
+    [✔️] Phase 2: mDNS Peer Discovery & Secure Handshake implementation.
 
-    [ ] Phase 3: P2P Encrypted Text Messaging & Gossip Sync (Pub/Sub).
+    [  ] Phase 3: P2P Encrypted Text Messaging & Gossip Sync (Pub/Sub).
 
-    [ ] Phase 4: Real-time Audio/Video Streaming & Screen Sharing.
+    [  ] Phase 4: Real-time Audio/Video Streaming & Screen Sharing.
 
-    [ ] Phase 5: Optimization for High-Density Local Networks.
+    [  ] Phase 5: Optimization for High-Density Local Networks.
 
     
 ## 🛡 Security & Reliability
